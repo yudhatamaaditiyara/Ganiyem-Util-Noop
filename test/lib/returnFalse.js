@@ -22,7 +22,7 @@ describe("returnFalse", () => {
 		assert.ok(typeof returnFalse === "function");
 	});
 	
-	it("valid return", () => {
+	it("valid return value", () => {
 		assert.ok(returnFalse() === false);
 	});
 	

@@ -22,7 +22,7 @@ describe("returnUndefined", () => {
 		assert.ok(typeof returnUndefined === "function");
 	});
 	
-	it("valid return", () => {
+	it("valid return value", () => {
 		assert.ok(returnUndefined() === void 0);
 	});
 	

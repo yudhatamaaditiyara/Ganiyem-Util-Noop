@@ -22,7 +22,7 @@ describe("returnThis", () => {
 		assert.ok(typeof returnThis === "function");
 	});
 	
-	it("valid return", () => {
+	it("valid return value", () => {
 		assert.ok(returnThis.call(this) === this);
 	});
 
