@@ -8,13 +8,17 @@
     "url": "git+https://github.com/yudhatamaaditiyara/Ganiyem-Util-Noop.git"
   },
   "devDependencies": {
-    "mocha": "6.2.2"
+    "coveralls": "3.0.7",
+    "mocha": "6.2.2",
+    "mocha-lcov-reporter": "1.3.0",
+    "nyc": "14.1.1"
   },
   "engines": {
     "node": ">= 12.0.0"
   },
   "scripts": {
-    "test": "mocha --config test/config.json"
+    "test": "nyc mocha --config test/bdd.json",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "files": [
     "LICENSE",
