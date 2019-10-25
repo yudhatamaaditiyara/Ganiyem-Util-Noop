@@ -16,25 +16,54 @@
 const assert = require("assert");
 const {create} = require("../../");
 
+/**
+ */
 describe("create", () => {
-
-	it("typeof function", () => {
-		assert.ok(typeof create === "function");
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof create, "function");
 	});
 
-	it("create() -> typeof function", () => {
+	/**
+	 */
+	it("type of create() === 'function'", () => {
 		let noop = create();
-		assert.ok(typeof noop === "function");
+		assert.strictEqual(typeof noop, "function");
 	});
 	
-	it("create()() -> typeof undefined", () => {
+	/**
+	 */
+	it("create()() === undefined", () => {
 		let noop = create();
-		assert.ok(typeof noop() === "undefined");
+		assert.strictEqual(noop(), void 0);
 	});
 
-	it("valid return value", () => {
+	/**
+	 */
+	it("create(123)() === 123", () => {
+		let noop = create(123);
+		assert.strictEqual(noop(), 123);
+	});
+
+	/**
+	 */
+	it("create('foo')() === 'foo'", () => {
+		let noop = create("foo");
+		assert.strictEqual(noop(), "foo");
+	});
+
+	/**
+	 */
+	it("create(null)() === null", () => {
 		let noop = create(null);
-		assert.ok(noop() === null);
+		assert.strictEqual(noop(), null);
 	});
 
+	/**
+	 */
+	it("create(undefined)() === undefined", () => {
+		let noop = create(undefined);
+		assert.strictEqual(noop(), undefined);
+	});
 });

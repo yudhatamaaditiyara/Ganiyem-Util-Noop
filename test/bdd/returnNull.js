@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 const assert = require("assert");
-const {returnTrue} = require("../../");
+const {returnNull} = require("../../");
 
-describe("returnTrue", () => {
-
-	it("typeof function", () => {
-		assert.ok(typeof returnTrue === "function");
+/**
+ */
+describe("returnNull", () => {
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof returnNull, "function");
 	});
 	
-	it("valid return value", () => {
-		assert.ok(returnTrue() === true);
+	/**
+	 */
+	it("returnNull() === null", () => {
+		assert.strictEqual(returnNull(), null);
 	});
-	
 });

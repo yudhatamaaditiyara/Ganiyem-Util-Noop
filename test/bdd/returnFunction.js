@@ -16,14 +16,24 @@
 const assert = require("assert");
 const {returnFunction} = require("../../");
 
+/**
+ */
 describe("returnFunction", () => {
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof returnFunction, "function");
+	});
+	
+	/**
+	 */
+	it("type of returnFunction() === 'function'", () => {
+		assert.strictEqual(typeof returnFunction(), "function");
+	});
 
-	it("typeof function", () => {
-		assert.ok(typeof returnFunction === "function");
+	/**
+	 */
+	it("returnFunction()() === undefined", () => {
+		assert.strictEqual(returnFunction()(), undefined);
 	});
-	
-	it("valid return value", () => {
-		assert.ok(typeof returnFunction() === "function");
-	});
-	
 });

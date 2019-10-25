@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 const assert = require("assert");
-const {returnUndefinedPromise} = require("../../");
+const {returnTrue} = require("../../");
 
-describe("returnUndefinedPromise", () => {
-
-	it("typeof function", () => {
-		assert.ok(typeof returnUndefinedPromise === "function");
-	});
-
-	it("returnUndefinedPromise() -> instanceof Promise", () => {
-		assert.ok(returnUndefinedPromise() instanceof Promise);
-	});
-	
-	it("valid return value", async () => {
-		assert.ok(await returnUndefinedPromise() === void 0);
-		return returnUndefinedPromise().then(value => {
-			assert.ok(value === void 0);
-		});
+/**
+ */
+describe("returnTrue", () => {
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof returnTrue, "function");
 	});
 	
+	/**
+	 */
+	it("returnTrue() === true", () => {
+		assert.strictEqual(returnTrue(), true);
+	});
 });

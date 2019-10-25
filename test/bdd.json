@@ -8,6 +8,6 @@
 	"reporter": "spec",
 	"extension": ["js"],
 	"recursive" : [
-		"test/lib"
+		"test/bdd"
 	]
 }

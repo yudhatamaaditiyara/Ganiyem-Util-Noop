@@ -16,14 +16,18 @@
 const assert = require("assert");
 const {returnUndefined} = require("../../");
 
+/**
+ */
 describe("returnUndefined", () => {
-
-	it("typeof function", () => {
-		assert.ok(typeof returnUndefined === "function");
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof returnUndefined, "function");
 	});
 	
-	it("valid return value", () => {
-		assert.ok(returnUndefined() === void 0);
+	/**
+	 */
+	it("returnUndefined() === undefined", () => {
+		assert.strictEqual(returnUndefined(), undefined);
 	});
-	
 });

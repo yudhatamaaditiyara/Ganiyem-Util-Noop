@@ -14,16 +14,34 @@
  * limitations under the License.
  */
 const assert = require("assert");
-const {returnNull} = require("../../");
+const {returnFalsePromise} = require("../../");
 
-describe("returnNull", () => {
+/**
+ */
+describe("returnFalsePromise", () => {
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof returnFalsePromise, "function");
+	});
 
-	it("typeof function", () => {
-		assert.ok(typeof returnNull === "function");
+	/**
+	 */
+	it("returnFalsePromise() instance of Promise", () => {
+		assert.ok(returnFalsePromise() instanceof Promise);
+	});
+
+	/**
+	 */
+	it("await returnFalsePromise() === false", async () => {
+		assert.strictEqual(await returnFalsePromise(), false);
 	});
 	
-	it("valid return value", () => {
-		assert.ok(returnNull() === null);
+	/**
+	 */
+	it("returnFalsePromise().then(value === false)", () => {
+		return returnFalsePromise().then(value => {
+			assert.strictEqual(value, false);
+		})
 	});
-	
 });

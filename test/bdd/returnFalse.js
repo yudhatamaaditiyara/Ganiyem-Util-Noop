@@ -14,23 +14,20 @@
  * limitations under the License.
  */
 const assert = require("assert");
-const {returnFunctionPromise} = require("../../");
+const {returnFalse} = require("../../");
 
-describe("returnFunctionPromise", () => {
-
-	it("typeof function", () => {
-		assert.ok(typeof returnFunctionPromise === "function");
-	});
-
-	it("returnFunctionPromise() -> instanceof Promise", () => {
-		assert.ok(returnFunctionPromise() instanceof Promise);
-	});
-
-	it("valid return value", async () => {
-		assert.ok(typeof (await returnFunctionPromise()) === "function");
-		return returnFunctionPromise().then(value => {
-			assert.ok(typeof value === "function");
-		});
+/**
+ */
+describe("returnFalse", () => {
+	/**
+	 */
+	it("type of function", () => {
+		assert.strictEqual(typeof returnFalse, "function");
 	});
 	
+	/**
+	 */
+	it("returnFalse() === false", () => {
+		assert.strictEqual(returnFalse(), false);
+	});
 });
