@@ -13,40 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const assert = require("assert");
-const {returnThisPromise} = require("../../");
+const assert = require('assert');
+const {returnThisPromise} = require('../../');
 
 /**
  */
-describe("returnThisPromise", () => {
+describe('returnThisPromise', () => {
 	/**
 	 */
-	it("type of function", () => {
-		assert.strictEqual(typeof returnThisPromise, "function");
+	it('type of function', () => {
+		assert.strictEqual(typeof returnThisPromise, 'function');
 	});
 
 	/**
 	 */
-	it("returnThisPromise() instance of Promise", () => {
+	it('returnThisPromise() instance of Promise', () => {
 		assert.ok(returnThisPromise() instanceof Promise);
 	});
 
 	/**
 	 */
-	it("await returnThisPromise.call(this) === this", async () => {
+	it('await returnThisPromise.call(this) === this', async () => {
 		assert.strictEqual(await returnThisPromise.call(this), this);
 	});
 
 	/**
 	 */
-	it("await #context.returnThisPromise() === #context", async () => {
+	it('await #context.returnThisPromise() === #context', async () => {
 		var context = {returnThisPromise: returnThisPromise};
 		assert.strictEqual(await context.returnThisPromise(), context);
 	});
 	
 	/**
 	 */
-	it("returnThisPromise.call(this).then(value === this)", () => {
+	it('returnThisPromise.call(this).then(value === this)', () => {
 		return returnThisPromise.call(this).then(value => {
 			assert.strictEqual(value, this);
 		})
@@ -54,7 +54,7 @@ describe("returnThisPromise", () => {
 
 	/**
 	 */
-	it("#context.returnThisPromise.call(this).then(value === #context)", () => {
+	it('#context.returnThisPromise.call(this).then(value === #context)', () => {
 		var context = {returnThisPromise: returnThisPromise};
 		return context.returnThisPromise().then(value => {
 			assert.strictEqual(value, context);

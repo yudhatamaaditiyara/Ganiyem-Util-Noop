@@ -13,27 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const assert = require("assert");
-const {returnFunction} = require("../../");
+const assert = require('assert');
+const {returnFunction} = require('../../');
 
 /**
  */
-describe("returnFunction", () => {
+describe('returnFunction', () => {
 	/**
 	 */
-	it("type of function", () => {
-		assert.strictEqual(typeof returnFunction, "function");
+	it('type of function', () => {
+		assert.strictEqual(typeof returnFunction, 'function');
 	});
 	
 	/**
 	 */
-	it("type of returnFunction() === 'function'", () => {
-		assert.strictEqual(typeof returnFunction(), "function");
+	it('type of returnFunction() === "function"', () => {
+		assert.strictEqual(typeof returnFunction(), 'function');
 	});
 
 	/**
 	 */
-	it("returnFunction()() === undefined", () => {
+	it('returnFunction()() === undefined', () => {
 		assert.strictEqual(returnFunction()(), undefined);
 	});
 });

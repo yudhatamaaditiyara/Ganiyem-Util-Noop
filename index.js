@@ -19,18 +19,18 @@
  * @+
  */
 module.exports = {
-	create: require("./lib/create"),
-	returnFalse: require("./lib/returnFalse"),
-	returnFunction: require("./lib/returnFunction"),
-	returnNull: require("./lib/returnNull"),
-	returnThis: require("./lib/returnThis"),
-	returnTrue: require("./lib/returnTrue"),
-	returnUndefined: require("./lib/returnUndefined"),
-	createPromise: require("./lib/createPromise"),
-	returnFalsePromise: require("./lib/returnFalsePromise"),
-	returnFunctionPromise: require("./lib/returnFunctionPromise"),
-	returnNullPromise: require("./lib/returnNullPromise"),
-	returnThisPromise: require("./lib/returnThisPromise"),
-	returnTruePromise: require("./lib/returnTruePromise"),
-	returnUndefinedPromise: require("./lib/returnUndefinedPromise")
+	create: require('./lib/create'),
+	returnFalse: require('./lib/returnFalse'),
+	returnFunction: require('./lib/returnFunction'),
+	returnNull: require('./lib/returnNull'),
+	returnThis: require('./lib/returnThis'),
+	returnTrue: require('./lib/returnTrue'),
+	returnUndefined: require('./lib/returnUndefined'),
+	createPromise: require('./lib/createPromise'),
+	returnFalsePromise: require('./lib/returnFalsePromise'),
+	returnFunctionPromise: require('./lib/returnFunctionPromise'),
+	returnNullPromise: require('./lib/returnNullPromise'),
+	returnThisPromise: require('./lib/returnThisPromise'),
+	returnTruePromise: require('./lib/returnTruePromise'),
+	returnUndefinedPromise: require('./lib/returnUndefinedPromise')
 };

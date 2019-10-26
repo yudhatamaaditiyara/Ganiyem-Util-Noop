@@ -13,33 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const assert = require("assert");
-const {returnFalsePromise} = require("../../");
+const assert = require('assert');
+const {returnFalsePromise} = require('../../');
 
 /**
  */
-describe("returnFalsePromise", () => {
+describe('returnFalsePromise', () => {
 	/**
 	 */
-	it("type of function", () => {
-		assert.strictEqual(typeof returnFalsePromise, "function");
+	it('type of function', () => {
+		assert.strictEqual(typeof returnFalsePromise, 'function');
 	});
 
 	/**
 	 */
-	it("returnFalsePromise() instance of Promise", () => {
+	it('returnFalsePromise() instance of Promise', () => {
 		assert.ok(returnFalsePromise() instanceof Promise);
 	});
 
 	/**
 	 */
-	it("await returnFalsePromise() === false", async () => {
+	it('await returnFalsePromise() === false', async () => {
 		assert.strictEqual(await returnFalsePromise(), false);
 	});
 	
 	/**
 	 */
-	it("returnFalsePromise().then(value === false)", () => {
+	it('returnFalsePromise().then(value === false)', () => {
 		return returnFalsePromise().then(value => {
 			assert.strictEqual(value, false);
 		})

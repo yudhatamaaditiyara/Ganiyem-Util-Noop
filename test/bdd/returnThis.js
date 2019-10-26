@@ -13,27 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const assert = require("assert");
-const {returnThis} = require("../../");
+const assert = require('assert');
+const {returnThis} = require('../../');
 
 /**
  */
-describe("returnThis", () => {
+describe('returnThis', () => {
 	/**
 	 */
-	it("type of function", () => {
-		assert.strictEqual(typeof returnThis, "function");
+	it('type of function', () => {
+		assert.strictEqual(typeof returnThis, 'function');
 	});
 	
 	/**
 	 */
-	it("returnThis.call(this) === this", () => {
+	it('returnThis.call(this) === this', () => {
 		assert.strictEqual(returnThis.call(this), this);
 	});
 
 	/**
 	 */
-	it("#context.returnThis() === #context", () => {
+	it('#context.returnThis() === #context', () => {
 		var context = {returnThis: returnThis};
 		assert.strictEqual(context.returnThis(), context);
 	});

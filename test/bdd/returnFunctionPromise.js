@@ -13,47 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const assert = require("assert");
-const {returnFunctionPromise} = require("../../");
+const assert = require('assert');
+const {returnFunctionPromise} = require('../../');
 
 /**
  */
-describe("returnFunctionPromise", () => {
+describe('returnFunctionPromise', () => {
 	/**
 	 */
-	it("type of function", () => {
-		assert.strictEqual(typeof returnFunctionPromise, "function");
+	it('type of function', () => {
+		assert.strictEqual(typeof returnFunctionPromise, 'function');
 	});
 	
 	/**
 	 */
-	it("returnFunctionPromise() instance of Promise", () => {
+	it('returnFunctionPromise() instance of Promise', () => {
 		assert.ok(returnFunctionPromise() instanceof Promise);
 	});
 
 	/**
 	 */
-	it("type of await returnFunctionPromise() === 'function'", async () => {
-		assert.strictEqual(typeof await returnFunctionPromise(), "function");
+	it('type of await returnFunctionPromise() === "function"', async () => {
+		assert.strictEqual(typeof await returnFunctionPromise(), 'function');
 	});
 
 	/**
 	 */
-	it("await returnFunctionPromise()() === undefined", async () => {
+	it('await returnFunctionPromise()() === undefined', async () => {
 		assert.strictEqual((await returnFunctionPromise())(), undefined);
 	});
 	
 	/**
 	 */
-	it("returnFunctionPromise().then(typeof value === 'function')", () => {
+	it('returnFunctionPromise().then(typeof value === "function")', () => {
 		return returnFunctionPromise().then(value => {
-			assert.strictEqual(typeof value, "function");
+			assert.strictEqual(typeof value, 'function');
 		})
 	});
 
 	/**
 	 */
-	it("returnFunctionPromise().then(value() === undefined)", () => {
+	it('returnFunctionPromise().then(value() === undefined)', () => {
 		return returnFunctionPromise().then(value => {
 			assert.strictEqual(value(), undefined);
 		})

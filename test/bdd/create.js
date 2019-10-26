@@ -13,56 +13,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const assert = require("assert");
-const {create} = require("../../");
+const assert = require('assert');
+const {create} = require('../../');
 
 /**
  */
-describe("create", () => {
+describe('create', () => {
 	/**
 	 */
-	it("type of function", () => {
-		assert.strictEqual(typeof create, "function");
+	it('type of function', () => {
+		assert.strictEqual(typeof create, 'function');
 	});
 
 	/**
 	 */
-	it("type of create() === 'function'", () => {
+	it('type of create() === "function"', () => {
 		let noop = create();
-		assert.strictEqual(typeof noop, "function");
+		assert.strictEqual(typeof noop, 'function');
 	});
 	
 	/**
 	 */
-	it("create()() === undefined", () => {
+	it('create()() === undefined', () => {
 		let noop = create();
 		assert.strictEqual(noop(), void 0);
 	});
 
 	/**
 	 */
-	it("create(123)() === 123", () => {
+	it('create(123)() === 123', () => {
 		let noop = create(123);
 		assert.strictEqual(noop(), 123);
 	});
 
 	/**
 	 */
-	it("create('foo')() === 'foo'", () => {
-		let noop = create("foo");
-		assert.strictEqual(noop(), "foo");
+	it('create("foo")() === "foo"', () => {
+		let noop = create('foo');
+		assert.strictEqual(noop(), 'foo');
 	});
 
 	/**
 	 */
-	it("create(null)() === null", () => {
+	it('create(null)() === null', () => {
 		let noop = create(null);
 		assert.strictEqual(noop(), null);
 	});
 
 	/**
 	 */
-	it("create(undefined)() === undefined", () => {
+	it('create(undefined)() === undefined', () => {
 		let noop = create(undefined);
 		assert.strictEqual(noop(), undefined);
 	});
