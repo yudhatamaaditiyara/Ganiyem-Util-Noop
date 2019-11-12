@@ -16,18 +16,12 @@
 const assert = require('assert');
 const {returnNull} = require('../../');
 
-/**
- */
 describe('returnNull', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnNull, 'function');
-	});
-	
-	/**
-	 */
-	it('returnNull() === null', () => {
-		assert.strictEqual(returnNull(), null);
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnNull === 'function');
+  });
+
+  it('must be returnNull() === null', () => {
+    assert.strictEqual(returnNull(), null);
+  });
 });

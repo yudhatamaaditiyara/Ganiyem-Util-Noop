@@ -16,25 +16,17 @@
 const assert = require('assert');
 const {returnThis} = require('../../');
 
-/**
- */
 describe('returnThis', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnThis, 'function');
-	});
-	
-	/**
-	 */
-	it('returnThis.call(this) === this', () => {
-		assert.strictEqual(returnThis.call(this), this);
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnThis === 'function');
+  });
 
-	/**
-	 */
-	it('#context.returnThis() === #context', () => {
-		var context = {returnThis: returnThis};
-		assert.strictEqual(context.returnThis(), context);
-	});
+  it('must be returnThis.call(this) === this', () => {
+    assert.strictEqual(returnThis.call(this), this);
+  });
+
+  it('must be #context.returnThis() === #context', () => {
+    var context = {returnThis: returnThis};
+    assert.strictEqual(context.returnThis(), context);
+  });
 });

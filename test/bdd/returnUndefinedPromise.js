@@ -16,32 +16,22 @@
 const assert = require('assert');
 const {returnUndefinedPromise} = require('../../');
 
-/**
- */
 describe('returnUndefinedPromise', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnUndefinedPromise, 'function');
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnUndefinedPromise === 'function');
+  });
 
-	/**
-	 */
-	it('returnUndefinedPromise() instance of Promise', () => {
-		assert.ok(returnUndefinedPromise() instanceof Promise);
-	});
+  it('must be returnUndefinedPromise() instanceof Promise', () => {
+    assert.ok(returnUndefinedPromise() instanceof Promise);
+  });
 
-	/**
-	 */
-	it('await returnUndefinedPromise() === undefined', async () => {
-		assert.strictEqual(await returnUndefinedPromise(), undefined);
-	});
-	
-	/**
-	 */
-	it('returnUndefinedPromise().then(value === undefined)', () => {
-		return returnUndefinedPromise().then(value => {
-			assert.strictEqual(value, void 0);
-		})
-	});
+  it('must be await returnUndefinedPromise() === undefined', async () => {
+    assert.strictEqual(await returnUndefinedPromise(), undefined);
+  });
+  
+  it('must be returnUndefinedPromise().then(value === undefined)', () => {
+    return returnUndefinedPromise().then(value => {
+      assert.strictEqual(value, void 0);
+    });
+  });
 });

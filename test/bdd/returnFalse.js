@@ -16,18 +16,12 @@
 const assert = require('assert');
 const {returnFalse} = require('../../');
 
-/**
- */
 describe('returnFalse', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnFalse, 'function');
-	});
-	
-	/**
-	 */
-	it('returnFalse() === false', () => {
-		assert.strictEqual(returnFalse(), false);
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnFalse === 'function');
+  });
+
+  it('must be returnFalse() === false', () => {
+    assert.strictEqual(returnFalse(), false);
+  });
 });

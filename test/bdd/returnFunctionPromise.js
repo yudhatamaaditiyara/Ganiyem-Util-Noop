@@ -16,46 +16,32 @@
 const assert = require('assert');
 const {returnFunctionPromise} = require('../../');
 
-/**
- */
 describe('returnFunctionPromise', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnFunctionPromise, 'function');
-	});
-	
-	/**
-	 */
-	it('returnFunctionPromise() instance of Promise', () => {
-		assert.ok(returnFunctionPromise() instanceof Promise);
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnFunctionPromise === 'function');
+  });
 
-	/**
-	 */
-	it('type of await returnFunctionPromise() === "function"', async () => {
-		assert.strictEqual(typeof await returnFunctionPromise(), 'function');
-	});
+  it('must be returnFunctionPromise() instanceof Promise', () => {
+    assert.ok(returnFunctionPromise() instanceof Promise);
+  });
 
-	/**
-	 */
-	it('await returnFunctionPromise()() === undefined', async () => {
-		assert.strictEqual((await returnFunctionPromise())(), undefined);
-	});
-	
-	/**
-	 */
-	it('returnFunctionPromise().then(typeof value === "function")', () => {
-		return returnFunctionPromise().then(value => {
-			assert.strictEqual(typeof value, 'function');
-		})
-	});
+  it('must be typeof await returnFunctionPromise() === "function"', async () => {
+    assert.strictEqual(typeof await returnFunctionPromise(), 'function');
+  });
 
-	/**
-	 */
-	it('returnFunctionPromise().then(value() === undefined)', () => {
-		return returnFunctionPromise().then(value => {
-			assert.strictEqual(value(), undefined);
-		})
-	});
+  it('must be await returnFunctionPromise()() === undefined', async () => {
+    assert.strictEqual((await returnFunctionPromise())(), undefined);
+  });
+
+  it('must be returnFunctionPromise().then(typeof value === "function")', () => {
+    return returnFunctionPromise().then(value => {
+      assert.strictEqual(typeof value, 'function');
+    });
+  });
+
+  it('must be returnFunctionPromise().then(value() === undefined)', () => {
+    return returnFunctionPromise().then(value => {
+      assert.strictEqual(value(), undefined);
+    });
+  });
 });

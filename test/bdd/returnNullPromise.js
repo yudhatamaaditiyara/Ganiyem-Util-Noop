@@ -16,32 +16,22 @@
 const assert = require('assert');
 const {returnNullPromise} = require('../../');
 
-/**
- */
 describe('returnNullPromise', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnNullPromise, 'function');
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnNullPromise === 'function');
+  });
 
-	/**
-	 */
-	it('returnNullPromise() instance of Promise', () => {
-		assert.ok(returnNullPromise() instanceof Promise);
-	});
+  it('must be returnNullPromise() instanceof Promise', () => {
+    assert.ok(returnNullPromise() instanceof Promise);
+  });
 
-	/**
-	 */
-	it('await returnNullPromise() === null', async () => {
-		assert.strictEqual(await returnNullPromise(), null);
-	});
-	
-	/**
-	 */
-	it('returnNullPromise().then(value === null)', () => {
-		return returnNullPromise().then(value => {
-			assert.strictEqual(value, null);
-		})
-	});
+  it('must be await returnNullPromise() === null', async () => {
+    assert.strictEqual(await returnNullPromise(), null);
+  });
+
+  it('must be returnNullPromise().then(value === null)', () => {
+    return returnNullPromise().then(value => {
+      assert.strictEqual(value, null);
+    })
+  });
 });

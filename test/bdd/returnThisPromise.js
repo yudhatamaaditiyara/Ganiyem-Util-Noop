@@ -16,48 +16,34 @@
 const assert = require('assert');
 const {returnThisPromise} = require('../../');
 
-/**
- */
 describe('returnThisPromise', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnThisPromise, 'function');
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnThisPromise === 'function');
+  });
 
-	/**
-	 */
-	it('returnThisPromise() instance of Promise', () => {
-		assert.ok(returnThisPromise() instanceof Promise);
-	});
+  it('must be returnThisPromise() instanceof Promise', () => {
+    assert.ok(returnThisPromise() instanceof Promise);
+  });
 
-	/**
-	 */
-	it('await returnThisPromise.call(this) === this', async () => {
-		assert.strictEqual(await returnThisPromise.call(this), this);
-	});
+  it('must be await returnThisPromise.call(this) === this', async () => {
+    assert.strictEqual(await returnThisPromise.call(this), this);
+  });
 
-	/**
-	 */
-	it('await #context.returnThisPromise() === #context', async () => {
-		var context = {returnThisPromise: returnThisPromise};
-		assert.strictEqual(await context.returnThisPromise(), context);
-	});
-	
-	/**
-	 */
-	it('returnThisPromise.call(this).then(value === this)', () => {
-		return returnThisPromise.call(this).then(value => {
-			assert.strictEqual(value, this);
-		})
-	});
+  it('must be await #context.returnThisPromise() === #context', async () => {
+    var context = {returnThisPromise: returnThisPromise};
+    assert.strictEqual(await context.returnThisPromise(), context);
+  });
 
-	/**
-	 */
-	it('#context.returnThisPromise.call(this).then(value === #context)', () => {
-		var context = {returnThisPromise: returnThisPromise};
-		return context.returnThisPromise().then(value => {
-			assert.strictEqual(value, context);
-		})
-	});
+  it('must be returnThisPromise.call(this).then(value === this)', () => {
+    return returnThisPromise.call(this).then(value => {
+      assert.strictEqual(value, this);
+    });
+  });
+
+  it('must be #context.returnThisPromise.call(this).then(value === #context)', () => {
+    var context = {returnThisPromise: returnThisPromise};
+    return context.returnThisPromise().then(value => {
+      assert.strictEqual(value, context);
+    });
+  });
 });

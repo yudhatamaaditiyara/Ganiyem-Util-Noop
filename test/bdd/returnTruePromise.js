@@ -16,32 +16,22 @@
 const assert = require('assert');
 const {returnTruePromise} = require('../../');
 
-/**
- */
 describe('returnTruePromise', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof returnTruePromise, 'function');
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof returnTruePromise === 'function');
+  });
 
-	/**
-	 */
-	it('returnTruePromise() instance of Promise', () => {
-		assert.ok(returnTruePromise() instanceof Promise);
-	});
+  it('must be returnTruePromise() instanceof Promise', () => {
+    assert.ok(returnTruePromise() instanceof Promise);
+  });
 
-	/**
-	 */
-	it('await returnTruePromise() === true', async () => {
-		assert.strictEqual(await returnTruePromise(), true);
-	});
-	
-	/**
-	 */
-	it('returnTruePromise().then(value === true)', () => {
-		return returnTruePromise().then(value => {
-			assert.strictEqual(value, true);
-		})
-	});
+  it('must be await returnTruePromise() === true', async () => {
+    assert.strictEqual(await returnTruePromise(), true);
+  });
+
+  it('must be returnTruePromise().then(value === true)', () => {
+    return returnTruePromise().then(value => {
+      assert.strictEqual(value, true);
+    });
+  });
 });

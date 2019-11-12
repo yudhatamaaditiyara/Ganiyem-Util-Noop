@@ -16,101 +16,73 @@
 const assert = require('assert');
 const {createPromise} = require('../../');
 
-/**
- */
 describe('createPromise', () => {
-	/**
-	 */
-	it('type of function', () => {
-		assert.strictEqual(typeof createPromise, 'function');
-	});
+  it('must be typeof function', () => {
+    assert.ok(typeof createPromise === 'function');
+  });
 
-	/**
-	 */
-	it('type of create() === "function"', () => {
-		let noop = createPromise();
-		assert.strictEqual(typeof noop, 'function');
-	});
-	
-	/**
-	 */
-	it('createPromise()() instance of Promise', () => {
-		let noop = createPromise();
-		assert.ok(noop() instanceof Promise);
-	});
+  it('must be typeof create() === "function"', () => {
+    let noop = createPromise();
+    assert.ok(typeof noop === 'function');
+  });
 
-	/**
-	 */
-	it('await createPromise()() === undefined', async () => {
-		let noop = createPromise();
-		assert.strictEqual(await noop(), undefined);
-	});
+  it('must be createPromise()() instanceof Promise', () => {
+    let noop = createPromise();
+    assert.ok(noop() instanceof Promise);
+  });
 
-	/**
-	 */
-	it('await createPromise(123)() === 123', async () => {
-		let noop = createPromise(123);
-		assert.strictEqual(await noop(), 123);
-	});
+  it('must be await createPromise()() === undefined', async () => {
+    let noop = createPromise();
+    assert.strictEqual(await noop(), undefined);
+  });
 
-	/**
-	 */
-	it('await createPromise("foo")() === "foo"', async () => {
-		let noop = createPromise('foo');
-		assert.strictEqual(await noop(), 'foo');
-	});
+  it('must be await createPromise(123)() === 123', async () => {
+    let noop = createPromise(123);
+    assert.strictEqual(await noop(), 123);
+  });
 
-	/**
-	 */
-	it('await createPromise(null)() === null', async () => {
-		let noop = createPromise(null);
-		assert.strictEqual(await noop(), null);
-	});
+  it('must be await createPromise("foo")() === "foo"', async () => {
+    let noop = createPromise('foo');
+    assert.strictEqual(await noop(), 'foo');
+  });
 
-	/**
-	 */
-	it('await createPromise(undefined)() === undefined', async () => {
-		let noop = createPromise(undefined);
-		assert.strictEqual(await noop(), undefined);
-	});
+  it('must be await createPromise(null)() === null', async () => {
+    let noop = createPromise(null);
+    assert.strictEqual(await noop(), null);
+  });
 
-	/**
-	 */
-	it('createPromise()().then(value === undefined)', () => {
-		return createPromise()().then(value => {
-			assert.strictEqual(value, undefined);
-		});
-	});
+  it('must be await createPromise(undefined)() === undefined', async () => {
+    let noop = createPromise(undefined);
+    assert.strictEqual(await noop(), undefined);
+  });
 
-	/**
-	 */
-	it('createPromise(123)().then(value === 123)', () => {
-		return createPromise(123)().then(value => {
-			assert.strictEqual(value, 123);
-		});
-	});
+  it('must be createPromise()().then(value === undefined)', () => {
+    return createPromise()().then(value => {
+      assert.strictEqual(value, undefined);
+    });
+  });
 
-	/**
-	 */
-	it('createPromise("foo")().then(value === "foo")', () => {
-		return createPromise('foo')().then(value => {
-			assert.strictEqual(value, 'foo');
-		});
-	});
+  it('must be createPromise(123)().then(value === 123)', () => {
+    return createPromise(123)().then(value => {
+      assert.strictEqual(value, 123);
+    });
+  });
 
-	/**
-	 */
-	it('createPromise(null)().then(value === null)', () => {
-		return createPromise(null)().then(value => {
-			assert.strictEqual(value, null);
-		});
-	});
+  it('must be createPromise("foo")().then(value === "foo")', () => {
+    return createPromise('foo')().then(value => {
+      assert.strictEqual(value, 'foo');
+    });
+  });
 
-	/**
-	 */
-	it('createPromise(undefined)().then(value === undefined)', () => {
-		return createPromise(void 0)().then(value => {
-			assert.strictEqual(value, void 0);
-		});
-	});
+  it('must be createPromise(null)().then(value === null)', () => {
+    return createPromise(null)().then(value => {
+      assert.strictEqual(value, null);
+    });
+  });
+
+  it('must be createPromise(undefined)().then(value === undefined)', () => {
+    return createPromise(void 0)().then(value => {
+      assert.strictEqual(value, void 0);
+    });
+  });
 });
