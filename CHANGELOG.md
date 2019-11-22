@@ -1,3 +1,8 @@
+# 1.1.7 - 2019-11-22
+
+- build: fix npm install deps version
+- docs: refactoring `CHANGELOG.md`
+
 # 1.1.6 - 2019-11-14
 
 - test: refactoring
